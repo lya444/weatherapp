@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.hazardapp;
+package main.java.com.mycompany.hazardapp;
 
 /**
  *
@@ -12,5 +12,7 @@ public class Hazardapp {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
+         Map map = new Map();
+         map.openMap();
     }
 }
