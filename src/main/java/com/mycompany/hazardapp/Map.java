@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 
 public class Map {
 
-    private JLayeredPane layeredPane; // Add this line
+    private JLayeredPane layeredPane;
 
     public void openMap() {
 
@@ -22,7 +22,7 @@ public class Map {
         frame.setLayout(null); // Disable layout manager for absolute positioning
 
         // Load the image
-        String imagePath = "images/The_World_map.png"; // Specify the path to your image
+        String imagePath = "images/The_World_map.png";
         ImageIcon imageIcon = new ImageIcon(imagePath);
 
         // Scale the image to fit the frame
@@ -52,7 +52,7 @@ public class Map {
                 textArea.setBorder(BorderFactory.createLineBorder(Color.BLACK)); // Add a border
 
                 // Load the new image
-                String newImagePath = "images/668-6687315_location-pointer-png.png"; // Specify the path to your new image
+                String newImagePath = "images/668-6687315_location-pointer-png.png";
                 ImageIcon newImageIcon = new ImageIcon(newImagePath);
                 Image iconImage = newImageIcon.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
                 newImageIcon = new ImageIcon(iconImage);
