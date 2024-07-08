@@ -1,0 +1,115 @@
+package communityhub;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.List;
+
+class Resource {
+    private String name;
+    private String type;
+    private String description;
+    
+    public Resource(String name, String type, String description) {
+        this.name= name;
+        this.type = type;
+        this.description = description;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public String getType() {
+        return type;
+    }
+    
+    public String getDescription() {
+        return description;
+    }
+    
+    @Override
+    public String toString() {
+        return "Resource:" + name + ", Type" + type + ",Description" + description;
+    }
+    
+}
+
+class CommunityResilienceHub {
+    private List<Resource> resources;
+    private List<String> notifications;
+    
+    public CommunityResilienceHub(){
+        resources = new ArrayList<>();
+        notifications = new ArrayList<>();
+    }
+    
+    public void addResource(Resource resource) {
+        resources.add(resource);
+    }
+    
+    public void displayResource() {
+        System.out.println("Available Resources:");
+        for (Resource resource : resources) {
+            System.out.println(resource);
+        }
+    }
+    
+    public void addNotification(String notification) {
+        notifications.add(notification);
+        }
+    
+    public void displayNotification() {
+        System.out.println("Notifications");
+       for (String notification : notifications) {
+            System.out.println(notification);
+        }
+    }
+}
+
+public class CommunityHub {
+    public static void main(String[] args) {
+        CommunityResilienceHub hub = new CommunityResilienceHub();
+        Scanner scanner = new Scanner(System.in);
+        
+        while (true) {
+            System.out.println("1. Add Resources");
+            System.out.println("2. Display Resources");
+            System.out.println("3. Add Notificaions");
+            System.out.println("4. Display Notifications");
+            System.out.println("5. Exit");
+            
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter Resource Name:");
+                    String name = scanner.nextLine();
+                    System.out.println("Enter Resource Type:");
+                    String type = scanner.nextLine();
+                    System.out.println("Enter Resource Description");
+                    String description = scanner.nextLine();
+                    hub.addResource(new Resource(name, type, description));
+                    break;
+                case 2: 
+                    hub.displayResource();
+                    break;
+                case 3: 
+                    System.out.println("Enter Notification:");
+                    String notification = scanner.nextLine();
+                    hub.addNotification(notification);
+                    break;
+                case 4:
+                    hub.displayNotification();
+                    break;
+                case 5:
+                    System.out.println("Done!");
+                    scanner.close();
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Something went wrong. Please try again,");
+            }
+        }
+    }
+}
